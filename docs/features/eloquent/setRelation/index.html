@@ -8,30 +8,33 @@
     <link rel="stylesheet" href="../../../assets/app.css">
     <script src="../../../assets/app.js" defer></script>
 </head>
-<body>
+<body data-docsmith-root="../../../">
     <div class="shell">
         <aside class="sidebar">
             <h1 class="brand">Laravel Undocumented Features</h1>
             <p class="tagline">A curated list of Laravel features that are not (or barely) documented in the official Laravel docs.</p>
+            <div class="sidebar-actions"><button type="button" class="theme-toggle" data-docsmith-theme-toggle>Theme</button></div>
             <div class="search">
                 <input type="search" placeholder="Search pages" aria-label="Search pages" data-docsmith-search>
+                <div class="search-results" data-docsmith-search-results hidden></div>
                 <div class="search-empty" data-docsmith-empty>No pages match your search.</div>
             </div>
-            <nav class="nav" data-docsmith-nav><section class="nav-group is-open has-active" data-nav-group><button type="button" class="nav-group-toggle" data-nav-toggle aria-expanded="true"><span class="nav-group-label"><span class="nav-group-icon">📊</span><span>Eloquent</span></span><span class="nav-group-caret" aria-hidden="true">▾</span></button><div class="nav-group-items" data-nav-items><a class="" href="../withAggregate/" data-nav-item data-title="withAggregate()" data-search="withAggregate() Fetch a single column from a relationship as a subselect without loading the full model">withAggregate()</a><a class="active" href="./" data-nav-item data-title="setRelation()" data-search="setRelation() Inject a relation value into a model instance without extra SQL">setRelation()</a></div></section></nav>
+            <nav class="nav" data-docsmith-nav><section class="nav-group is-open has-active" data-nav-group><button type="button" class="nav-group-toggle" data-nav-toggle aria-expanded="true"><span class="nav-group-label"><span class="nav-group-icon">📊</span><span>Eloquent</span></span><span class="nav-group-caret" aria-hidden="true">▾</span></button><div class="nav-group-items" data-nav-items><a class="" href="../withAggregate/" data-nav-item data-title="withAggregate()" data-search="withAggregate() withAggregate() Fetch a single column from a relationship as a subselect without loading the full model">withAggregate()</a><a class="active" href="./" data-nav-item data-title="setRelation()" data-search="setRelation() setRelation() Inject a relation value into a model instance without extra SQL">setRelation()</a></div></section></nav>
         </aside>
         <main class="content">
             <article>
                 <header class="doc-head">
+                    <nav class="breadcrumbs" aria-label="Breadcrumbs"><a href="../../../">Docs</a><span class="breadcrumb-sep">/</span><a href="../../">Features</a><span class="breadcrumb-sep">/</span><a href="../">Eloquent</a></nav>
                     <h1>setRelation()</h1>
                     <p class="doc-description">Inject a relation value into a model instance without extra SQL</p>
                 </header>
                 <div class="doc-body">
                     <p><strong>Description:</strong> Manually sets a loaded relationship value on an Eloquent model instance without running an additional query.</p>
 <p>This is useful when you already have the related model in memory and want to avoid repeated relation hydration work.</p>
-<h2>Signature</h2>
+<h2 id="signature">Signature</h2>
 <pre><code class="hljs language-php">setRelation(string $relation, mixed $value): <span class="hljs-keyword">$this</span>
 </code></pre>
-<h2>Usage</h2>
+<h2 id="usage">Usage</h2>
 <pre><code class="hljs language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Models</span>\<span class="hljs-title">Team</span>;
 
 $team = Team::current();
@@ -44,18 +47,23 @@ $sites = $team-&gt;sites()-&gt;get()
 
 <span class="hljs-comment">// Accessing $site-&gt;team will not trigger another query.</span>
 </code></pre>
-<h2>Why it matters</h2>
+<h2 id="why-it-matters">Why it matters</h2>
 <p>In multi-tenant or parent-child loops, this can prevent hidden N+1 behavior caused by repeatedly resolving the same parent relation.</p>
-<h2>Sources</h2>
+<h2 id="sources">Sources</h2>
 <ul>
 <li>API docs (Laravel 13): <a href="https://api.laravel.com/docs/13.x/Illuminate/Database/Eloquent/Concerns/HasRelationships.html#method_setRelation">https://api.laravel.com/docs/13.x/Illuminate/Database/Eloquent/Concerns/HasRelationships.html#method_setRelation</a></li>
 <li>Community example: <a href="https://freek.dev/2311-increase-performance-by-using-eloquents-setrelation-method">https://freek.dev/2311-increase-performance-by-using-eloquents-setrelation-method</a></li>
 </ul>
-<hr />
+<hr>
 
                 </div>
+                <footer class="doc-meta">
+                    
+                </footer>
             </article>
+            <nav class="pager" aria-label="Page navigation"><a class="pager-link" href="../withAggregate/"><span>Previous</span><strong>withAggregate()</strong></a></nav>
         </main>
+        
     </div>
 </body>
 </html>

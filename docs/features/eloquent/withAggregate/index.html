@@ -8,30 +8,33 @@
     <link rel="stylesheet" href="../../../assets/app.css">
     <script src="../../../assets/app.js" defer></script>
 </head>
-<body>
+<body data-docsmith-root="../../../">
     <div class="shell">
         <aside class="sidebar">
             <h1 class="brand">Laravel Undocumented Features</h1>
             <p class="tagline">A curated list of Laravel features that are not (or barely) documented in the official Laravel docs.</p>
+            <div class="sidebar-actions"><button type="button" class="theme-toggle" data-docsmith-theme-toggle>Theme</button></div>
             <div class="search">
                 <input type="search" placeholder="Search pages" aria-label="Search pages" data-docsmith-search>
+                <div class="search-results" data-docsmith-search-results hidden></div>
                 <div class="search-empty" data-docsmith-empty>No pages match your search.</div>
             </div>
-            <nav class="nav" data-docsmith-nav><section class="nav-group is-open has-active" data-nav-group><button type="button" class="nav-group-toggle" data-nav-toggle aria-expanded="true"><span class="nav-group-label"><span class="nav-group-icon">📊</span><span>Eloquent</span></span><span class="nav-group-caret" aria-hidden="true">▾</span></button><div class="nav-group-items" data-nav-items><a class="active" href="./" data-nav-item data-title="withAggregate()" data-search="withAggregate() Fetch a single column from a relationship as a subselect without loading the full model">withAggregate()</a><a class="" href="../setRelation/" data-nav-item data-title="setRelation()" data-search="setRelation() Inject a relation value into a model instance without extra SQL">setRelation()</a></div></section></nav>
+            <nav class="nav" data-docsmith-nav><section class="nav-group is-open has-active" data-nav-group><button type="button" class="nav-group-toggle" data-nav-toggle aria-expanded="true"><span class="nav-group-label"><span class="nav-group-icon">📊</span><span>Eloquent</span></span><span class="nav-group-caret" aria-hidden="true">▾</span></button><div class="nav-group-items" data-nav-items><a class="active" href="./" data-nav-item data-title="withAggregate()" data-search="withAggregate() withAggregate() Fetch a single column from a relationship as a subselect without loading the full model">withAggregate()</a><a class="" href="../setRelation/" data-nav-item data-title="setRelation()" data-search="setRelation() setRelation() Inject a relation value into a model instance without extra SQL">setRelation()</a></div></section></nav>
         </aside>
         <main class="content">
             <article>
                 <header class="doc-head">
+                    <nav class="breadcrumbs" aria-label="Breadcrumbs"><a href="../../../">Docs</a><span class="breadcrumb-sep">/</span><a href="../../">Features</a><span class="breadcrumb-sep">/</span><a href="../">Eloquent</a></nav>
                     <h1>withAggregate()</h1>
                     <p class="doc-description">Fetch a single column from a relationship as a subselect without loading the full model</p>
                 </header>
                 <div class="doc-body">
                     <p><strong>Description:</strong> Adds a subselect to the query that fetches a single column from a related model without eager loading the full relationship. The value is accessible as a dynamically named attribute (<code>{relation}_{column}</code>) on the result.</p>
 <p>This is the underlying method that powers <code>withCount()</code>, <code>withSum()</code>, <code>withMax()</code>, <code>withMin()</code>, <code>withAvg()</code>, and <code>withExists()</code>.</p>
-<h2>Signature</h2>
+<h2 id="signature">Signature</h2>
 <pre><code class="hljs language-php">withAggregate(mixed $relations, string $column, string $function = <span class="hljs-keyword">null</span>): <span class="hljs-keyword">static</span>
 </code></pre>
-<h2>Usage</h2>
+<h2 id="usage">Usage</h2>
 <pre><code class="hljs language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Models</span>\<span class="hljs-title">Post</span>;
 
 $posts = Post::query()
@@ -48,7 +51,7 @@ $posts = Post::query()
 
 <span class="hljs-keyword">echo</span> $posts-&gt;first()-&gt;user_name; <span class="hljs-comment">// "John Doe"</span>
 </code></pre>
-<h2>How it works</h2>
+<h2 id="how-it-works">How it works</h2>
 <p><code>withAggregate()</code> adds a correlated subquery to the main SQL query. For example, <code>withAggregate('user', 'name')</code> produces something like:</p>
 <pre><code class="hljs language-sql"><span class="hljs-keyword">SELECT</span>
     posts.*,
@@ -60,19 +63,24 @@ $posts = Post::query()
     ) <span class="hljs-keyword">AS</span> user_name
 <span class="hljs-keyword">FROM</span> posts
 </code></pre>
-<h2>Notes</h2>
+<h2 id="notes">Notes</h2>
 <ul>
 <li>The generated attribute name follows the pattern <code>{snake_case_relation}_{column}</code>.</li>
 <li>For aggregate functions pass the <code>$function</code> argument (e.g. <code>'SUM'</code>, <code>'MAX'</code>). When <code>null</code>, it selects the raw column value.</li>
 <li>All the familiar helper methods (<code>withCount</code>, <code>withSum</code>, <code>withMax</code>, <code>withMin</code>, <code>withAvg</code>, <code>withExists</code>) delegate to this single method internally.</li>
 </ul>
-<h2>Source</h2>
+<h2 id="source">Source</h2>
 <p><code>Illuminate\Database\Eloquent\Concerns\QueriesRelationships::withAggregate()</code></p>
-<hr />
+<hr>
 
                 </div>
+                <footer class="doc-meta">
+                    
+                </footer>
             </article>
+            <nav class="pager" aria-label="Page navigation"><a class="pager-link pager-link-next" href="../setRelation/"><span>Next</span><strong>setRelation()</strong></a></nav>
         </main>
+        
     </div>
 </body>
 </html>
