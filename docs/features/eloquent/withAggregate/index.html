@@ -10,17 +10,25 @@
 </head>
 <body data-docsmith-root="../../../">
     <div class="shell">
-        <aside class="sidebar">
-            <h1 class="brand">Laravel Undocumented Features</h1>
-            <p class="tagline">A curated list of Laravel features that are not (or barely) documented in the official Laravel docs.</p>
-            <div class="sidebar-actions"><button type="button" class="theme-toggle" data-docsmith-theme-toggle>Theme</button></div>
-            <div class="search">
-                <input type="search" placeholder="Search pages" aria-label="Search pages" data-docsmith-search>
-                <div class="search-results" data-docsmith-search-results hidden></div>
-                <div class="search-empty" data-docsmith-empty>No pages match your search.</div>
+        <aside class="sidebar" data-docsmith-sidebar>
+            <div class="sidebar-header">
+                <div class="sidebar-title">
+                    <h1 class="brand">Laravel Undocumented Features</h1>
+                    <p class="tagline">A curated list of Laravel features that are not (or barely) documented in the official Laravel docs.</p>
+                </div>
+                <button type="button" class="mobile-menu-toggle" data-docsmith-menu-toggle aria-expanded="false" aria-controls="docsmith-sidebar-panel" aria-label="Open menu"><span class="mobile-menu-icon" aria-hidden="true"></span><span class="sr-only">Toggle menu</span></button>
             </div>
-            <nav class="nav" data-docsmith-nav><section class="nav-group is-open has-active" data-nav-group><button type="button" class="nav-group-toggle" data-nav-toggle aria-expanded="true"><span class="nav-group-label"><span class="nav-group-icon">📊</span><span>Eloquent</span></span><span class="nav-group-caret" aria-hidden="true">▾</span></button><div class="nav-group-items" data-nav-items><a class="active" href="./" data-nav-item data-title="withAggregate()" data-search="withAggregate() withAggregate() Fetch a single column from a relationship as a subselect without loading the full model">withAggregate()</a><a class="" href="../setRelation/" data-nav-item data-title="setRelation()" data-search="setRelation() setRelation() Inject a relation value into a model instance without extra SQL">setRelation()</a></div></section></nav>
+            <div class="sidebar-panel" id="docsmith-sidebar-panel" data-docsmith-sidebar-panel>
+                <div class="sidebar-actions"><button type="button" class="theme-toggle" data-docsmith-theme-toggle>Theme</button></div>
+                <div class="search">
+                    <input type="search" placeholder="Search pages" aria-label="Search pages" data-docsmith-search>
+                    <div class="search-results" data-docsmith-search-results hidden></div>
+                    <div class="search-empty" data-docsmith-empty>No pages match your search.</div>
+                </div>
+                <nav class="nav" data-docsmith-nav><section class="nav-group is-open has-active" data-nav-group><button type="button" class="nav-group-toggle" data-nav-toggle aria-expanded="true"><span class="nav-group-label"><span class="nav-group-icon">📊</span><span>Eloquent</span></span><span class="nav-group-caret" aria-hidden="true">▾</span></button><div class="nav-group-items" data-nav-items><a class="active" href="./" data-nav-item data-title="withAggregate()" data-search="withAggregate() withAggregate() Fetch a single column from a relationship as a subselect without loading the full model">withAggregate()</a><a class="" href="../setRelation/" data-nav-item data-title="setRelation()" data-search="setRelation() setRelation() Inject a relation value into a model instance without extra SQL">setRelation()</a></div></section></nav>
+            </div>
         </aside>
+        <button type="button" class="sidebar-backdrop" data-docsmith-sidebar-backdrop aria-label="Close menu"></button>
         <main class="content">
             <article>
                 <header class="doc-head">
@@ -32,37 +40,40 @@
                     <p><strong>Description:</strong> Adds a subselect to the query that fetches a single column from a related model without eager loading the full relationship. The value is accessible as a dynamically named attribute (<code>{relation}_{column}</code>) on the result.</p>
 <p>This is the underlying method that powers <code>withCount()</code>, <code>withSum()</code>, <code>withMax()</code>, <code>withMin()</code>, <code>withAvg()</code>, and <code>withExists()</code>.</p>
 <h2 id="signature">Signature</h2>
-<pre><code class="hljs language-php">withAggregate(mixed $relations, string $column, string $function = <span class="hljs-keyword">null</span>): <span class="hljs-keyword">static</span>
-</code></pre>
+<pre class="phiki language-php github-light phiki-themes github-dark" data-language="php" style="background-color: #fff;color: #24292e;;--phiki-dark-background-color: #24292e;--phiki-dark-color: #e1e4e8"><code><span class="line"><span class="token" style="color: #6f42c1;;--phiki-dark-color: #b392f0">withAggregate</span><span class="token">(</span><span class="token" style="color: #d73a49;;--phiki-dark-color: #f97583">mixed</span><span class="token"> </span><span class="token" style="color: #24292e;;--phiki-dark-color: #e1e4e8">$</span><span class="token" style="color: #24292e;;--phiki-dark-color: #e1e4e8">relations</span><span class="token">,</span><span class="token"> </span><span class="token" style="color: #d73a49;;--phiki-dark-color: #f97583">string</span><span class="token"> </span><span class="token" style="color: #24292e;;--phiki-dark-color: #e1e4e8">$</span><span class="token" style="color: #24292e;;--phiki-dark-color: #e1e4e8">column</span><span class="token">,</span><span class="token"> </span><span class="token" style="color: #d73a49;;--phiki-dark-color: #f97583">string</span><span class="token"> </span><span class="token" style="color: #24292e;;--phiki-dark-color: #e1e4e8">$</span><span class="token" style="color: #24292e;;--phiki-dark-color: #e1e4e8">function</span><span class="token"> </span><span class="token" style="color: #d73a49;;--phiki-dark-color: #f97583">=</span><span class="token"> </span><span class="token" style="color: #005cc5;;--phiki-dark-color: #79b8ff">null</span><span class="token">)</span><span class="token">:</span><span class="token"> </span><span class="token" style="color: #d73a49;;--phiki-dark-color: #f97583">static</span><span class="token">
+</span></span><span class="line"><span class="token">
+</span></span></code></pre>
 <h2 id="usage">Usage</h2>
-<pre><code class="hljs language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Models</span>\<span class="hljs-title">Post</span>;
-
-$posts = Post::query()
-    <span class="hljs-comment">// You maybe already know:</span>
-    -&gt;withCount(<span class="hljs-string">'comments'</span>)     <span class="hljs-comment">// adds comments_count</span>
-    -&gt;withSum(<span class="hljs-string">'comments'</span>, <span class="hljs-string">'votes'</span>) <span class="hljs-comment">// adds comments_sum_votes</span>
-
-    <span class="hljs-comment">// You might not know this — fetch a single relationship column</span>
-    <span class="hljs-comment">// without loading the full model or running extra queries.</span>
-    <span class="hljs-comment">// Works great for one-to-one / belongsTo relationships.</span>
-    -&gt;withAggregate(<span class="hljs-string">'user'</span>, <span class="hljs-string">'name'</span>)  <span class="hljs-comment">// adds user_name</span>
-
-    -&gt;get();
-
-<span class="hljs-keyword">echo</span> $posts-&gt;first()-&gt;user_name; <span class="hljs-comment">// "John Doe"</span>
-</code></pre>
+<pre class="phiki language-php github-light phiki-themes github-dark" data-language="php" style="background-color: #fff;color: #24292e;;--phiki-dark-background-color: #24292e;--phiki-dark-color: #e1e4e8"><code><span class="line"><span class="token" style="color: #d73a49;;--phiki-dark-color: #f97583">use</span><span class="token"> </span><span class="token" style="color: #005cc5;;--phiki-dark-color: #79b8ff">App</span><span class="token" style="color: #005cc5;;--phiki-dark-color: #79b8ff">\</span><span class="token" style="color: #005cc5;;--phiki-dark-color: #79b8ff">Models</span><span class="token" style="color: #005cc5;;--phiki-dark-color: #79b8ff">\</span><span class="token" style="color: #005cc5;;--phiki-dark-color: #79b8ff">Post</span><span class="token">;</span><span class="token">
+</span></span><span class="line"><span class="token">
+</span></span><span class="line"><span class="token" style="color: #24292e;;--phiki-dark-color: #e1e4e8">$</span><span class="token" style="color: #24292e;;--phiki-dark-color: #e1e4e8">posts</span><span class="token"> </span><span class="token" style="color: #d73a49;;--phiki-dark-color: #f97583">=</span><span class="token"> </span><span class="token" style="color: #005cc5;;--phiki-dark-color: #79b8ff">Post</span><span class="token" style="color: #d73a49;;--phiki-dark-color: #f97583">::</span><span class="token" style="color: #6f42c1;;--phiki-dark-color: #b392f0">query</span><span class="token">(</span><span class="token">)</span><span class="token">
+</span></span><span class="line"><span class="token">    </span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d">//</span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d"> You maybe already know:</span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d">
+</span></span><span class="line"><span class="token">    </span><span class="token" style="color: #d73a49;;--phiki-dark-color: #f97583">-&gt;</span><span class="token" style="color: #6f42c1;;--phiki-dark-color: #b392f0">withCount</span><span class="token">(</span><span class="token" style="color: #032f62;;--phiki-dark-color: #9ecbff">'</span><span class="token" style="color: #032f62;;--phiki-dark-color: #9ecbff">comments</span><span class="token" style="color: #032f62;;--phiki-dark-color: #9ecbff">'</span><span class="token">)</span><span class="token">     </span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d">//</span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d"> adds comments_count</span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d">
+</span></span><span class="line"><span class="token">    </span><span class="token" style="color: #d73a49;;--phiki-dark-color: #f97583">-&gt;</span><span class="token" style="color: #6f42c1;;--phiki-dark-color: #b392f0">withSum</span><span class="token">(</span><span class="token" style="color: #032f62;;--phiki-dark-color: #9ecbff">'</span><span class="token" style="color: #032f62;;--phiki-dark-color: #9ecbff">comments</span><span class="token" style="color: #032f62;;--phiki-dark-color: #9ecbff">'</span><span class="token">,</span><span class="token"> </span><span class="token" style="color: #032f62;;--phiki-dark-color: #9ecbff">'</span><span class="token" style="color: #032f62;;--phiki-dark-color: #9ecbff">votes</span><span class="token" style="color: #032f62;;--phiki-dark-color: #9ecbff">'</span><span class="token">)</span><span class="token"> </span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d">//</span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d"> adds comments_sum_votes</span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d">
+</span></span><span class="line"><span class="token">
+</span></span><span class="line"><span class="token">    </span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d">//</span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d"> You might not know this — fetch a single relationship column</span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d">
+</span></span><span class="line"><span class="token">    </span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d">//</span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d"> without loading the full model or running extra queries.</span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d">
+</span></span><span class="line"><span class="token">    </span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d">//</span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d"> Works great for one-to-one / belongsTo relationships.</span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d">
+</span></span><span class="line"><span class="token">    </span><span class="token" style="color: #d73a49;;--phiki-dark-color: #f97583">-&gt;</span><span class="token" style="color: #6f42c1;;--phiki-dark-color: #b392f0">withAggregate</span><span class="token">(</span><span class="token" style="color: #032f62;;--phiki-dark-color: #9ecbff">'</span><span class="token" style="color: #032f62;;--phiki-dark-color: #9ecbff">user</span><span class="token" style="color: #032f62;;--phiki-dark-color: #9ecbff">'</span><span class="token">,</span><span class="token"> </span><span class="token" style="color: #032f62;;--phiki-dark-color: #9ecbff">'</span><span class="token" style="color: #032f62;;--phiki-dark-color: #9ecbff">name</span><span class="token" style="color: #032f62;;--phiki-dark-color: #9ecbff">'</span><span class="token">)</span><span class="token">  </span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d">//</span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d"> adds user_name</span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d">
+</span></span><span class="line"><span class="token">
+</span></span><span class="line"><span class="token">    </span><span class="token" style="color: #d73a49;;--phiki-dark-color: #f97583">-&gt;</span><span class="token" style="color: #6f42c1;;--phiki-dark-color: #b392f0">get</span><span class="token">(</span><span class="token">)</span><span class="token">;</span><span class="token">
+</span></span><span class="line"><span class="token">
+</span></span><span class="line"><span class="token" style="color: #005cc5;;--phiki-dark-color: #79b8ff">echo</span><span class="token"> </span><span class="token" style="color: #24292e;;--phiki-dark-color: #e1e4e8">$</span><span class="token" style="color: #24292e;;--phiki-dark-color: #e1e4e8">posts</span><span class="token" style="color: #d73a49;;--phiki-dark-color: #f97583">-&gt;</span><span class="token" style="color: #6f42c1;;--phiki-dark-color: #b392f0">first</span><span class="token">(</span><span class="token">)</span><span class="token" style="color: #d73a49;;--phiki-dark-color: #f97583">-&gt;</span><span class="token" style="color: #24292e;;--phiki-dark-color: #e1e4e8">user_name</span><span class="token">;</span><span class="token"> </span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d">//</span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d"> "John Doe"</span><span class="token" style="color: #6a737d;;--phiki-dark-color: #6a737d">
+</span></span><span class="line"><span class="token">
+</span></span></code></pre>
 <h2 id="how-it-works">How it works</h2>
 <p><code>withAggregate()</code> adds a correlated subquery to the main SQL query. For example, <code>withAggregate('user', 'name')</code> produces something like:</p>
-<pre><code class="hljs language-sql"><span class="hljs-keyword">SELECT</span>
-    posts.*,
-    (
-        <span class="hljs-keyword">SELECT</span> users.name
-        <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">users</span>
-        <span class="hljs-keyword">WHERE</span> users.id = posts.user_id
-        <span class="hljs-keyword">LIMIT</span> <span class="hljs-number">1</span>
-    ) <span class="hljs-keyword">AS</span> user_name
-<span class="hljs-keyword">FROM</span> posts
-</code></pre>
+<pre class="phiki language-sql github-light phiki-themes github-dark" data-language="sql" style="background-color: #fff;color: #24292e;;--phiki-dark-background-color: #24292e;--phiki-dark-color: #e1e4e8"><code><span class="line"><span class="token" style="color: #d73a49;;--phiki-dark-color: #f97583">SELECT</span><span class="token">
+</span></span><span class="line"><span class="token">    posts.</span><span class="token" style="color: #d73a49;;--phiki-dark-color: #f97583">*</span><span class="token">,
+</span></span><span class="line"><span class="token">    (
+</span></span><span class="line"><span class="token">        </span><span class="token" style="color: #d73a49;;--phiki-dark-color: #f97583">SELECT</span><span class="token"> </span><span class="token" style="color: #005cc5;;--phiki-dark-color: #79b8ff">users</span><span class="token">.</span><span class="token" style="color: #005cc5;;--phiki-dark-color: #79b8ff">name</span><span class="token">
+</span></span><span class="line"><span class="token">        </span><span class="token" style="color: #d73a49;;--phiki-dark-color: #f97583">FROM</span><span class="token"> users
+</span></span><span class="line"><span class="token">        </span><span class="token" style="color: #d73a49;;--phiki-dark-color: #f97583">WHERE</span><span class="token"> </span><span class="token" style="color: #005cc5;;--phiki-dark-color: #79b8ff">users</span><span class="token">.</span><span class="token" style="color: #005cc5;;--phiki-dark-color: #79b8ff">id</span><span class="token"> </span><span class="token" style="color: #d73a49;;--phiki-dark-color: #f97583">=</span><span class="token"> </span><span class="token" style="color: #005cc5;;--phiki-dark-color: #79b8ff">posts</span><span class="token">.</span><span class="token" style="color: #005cc5;;--phiki-dark-color: #79b8ff">user_id</span><span class="token">
+</span></span><span class="line"><span class="token">        </span><span class="token" style="color: #d73a49;;--phiki-dark-color: #f97583">LIMIT</span><span class="token"> </span><span class="token" style="color: #005cc5;;--phiki-dark-color: #79b8ff">1</span><span class="token">
+</span></span><span class="line"><span class="token">    ) </span><span class="token" style="color: #d73a49;;--phiki-dark-color: #f97583">AS</span><span class="token"> user_name
+</span></span><span class="line"><span class="token" style="color: #d73a49;;--phiki-dark-color: #f97583">FROM</span><span class="token"> posts
+</span></span><span class="line"><span class="token">
+</span></span></code></pre>
 <h2 id="notes">Notes</h2>
 <ul>
 <li>The generated attribute name follows the pattern <code>{snake_case_relation}_{column}</code>.</li>
