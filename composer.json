@@ -3,7 +3,7 @@
         "php": ">=8.3"
     },
     "require-dev": {
-        "mrpunyapal/docsmith": "^0.1.4"
+        "mrpunyapal/docsmith": "^0.2.0"
     },
     "scripts": {
         "docs:build": "@php build-docs.php"
